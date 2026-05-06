@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestor de Inventario Pro</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Gestión de Inventario Pro</h1>
+
+            <div class="barra-superior">
+                <div class="filtros">
+                    <button class="verTodo" id="btnTodo" type="button">Todos los productos</button>
+                    <button class="verAlertas" id="btnAlertas" type="button">Alertas de Stock</button>
+                </div>
+                <button class="btn-agregar" id="btnAgregar" type="button">
+                    <span>+</span> Nuevo Producto
+                </button>
+            </div>
+
+            <div id="formulario-producto" class="formulario-oculto">
+                <h3>Registrar Nuevo Producto</h3>
+                <form id="formCrear">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" id="campo-nombre" placeholder="Ej: Taladro Percutor" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio ($)</label>
+                        <input type="number" id="campo-precio" placeholder="0.00" step="0.01" min="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock Actual</label>
+                        <input type="number" id="campo-stock" placeholder="Cantidad en almacén" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock Mínimo</label>
+                        <input type="number" id="campo-stock-minimo" placeholder="Límite de alerta" min="0" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label>ID Categoría</label>
+                        <input type="number" id="campo-categoria" placeholder="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ID Proveedor</label>
+                        <input type="number" id="campo-proveedor" placeholder="1" required>
+                    </div>
+                    
+                    <div class="botones-formulario">
+                        <button type="button" class="verTodo" id="btnCancelar">Cancelar</button>
+                        <button type="submit" class="btn-agregar">Guardar Producto</button>
+                    </div>
+                </form>
+                <p id="mensaje-formulario" class="mensaje"></p>
+            </div>
+
+            <table class="tablaproductos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Producto</th>
+                        <th>Stock Actual</th>
+                        <th>Stock Mín.</th>
+                        <th>Categoría</th>
+                        <th>Proveedor</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="CuerpoTabla">
+                    <!-- Se carga vía JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <script src="/static/GestionDeInventario.js"></script>
+    </body>
+
+</html>
