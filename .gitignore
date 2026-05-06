@@ -40,8 +40,3 @@ dist-ssr
 .DS_Store
 Thumbs.db
 
-# Database (Local SQLite)
-*.db
-*.sqlite3
-
-# NOTA: .env NO se incluye aquí por petición del usuario para compartirlo con el equipo.
